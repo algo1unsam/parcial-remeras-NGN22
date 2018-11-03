@@ -22,4 +22,9 @@ object empresa {
 		
 	method maximoPedido() = pedidos.max { pedido => pedido.precio()}
 	
+	method cantidadDeColor(unColor)
+	{	  
+	var pedidoscolor = pedidos.filter{pedido => pedido.sucursal() == unColor}
+	return pedidoscolor.size()
+	}
 }
