@@ -1,0 +1,42 @@
+import Remeras.*
+import objects.*
+import registro.*
+
+describe ""{
+	var color = new Color()
+	var remera = new Remera(color = color, numero = 48)
+	var remeraBordada = new Bordado(cantidadColores = 2, numero = 48, color = color)
+	
+	var sucursal = new Sucursal(cantidad = 5)
+	var pedido = new Pedidos(remera = remera,sucursal = sucursal,cantidadPedida = 4)
+	var pedido1 = new Pedidos(remera = remera,sucursal = sucursal,cantidadPedida = 1)
+	
+	
+	
+	test "remera" {
+		assert.equals(100,remera.costo())
+	}
+	
+	test "bordado"{
+		assert.equals(120,remeraBordada.costo())
+	}
+	
+	test "pedido sin descuento de remera"{
+		assert.equals(400,pedido.precio())
+	} 
+	
+	test " empresa total facturado" {
+		empresa.altaPedido(pedido)
+		assert.equals(pedido,empresa.maximoPedido()) 
+		assert.equals(400,empresa.totalFacturado())
+	}
+	test " empresama facturacion sucursales" {
+		empresa.altaPedido(pedido)
+		assert.equals(400,empresa.facturacionSucursal(sucursal))
+		assert.equals([sucursal],empresa.sucursales())
+		assert.equals(sucursal,empresa.sucursalMasFacturada())
+	}
+	
+	
+	
+}
