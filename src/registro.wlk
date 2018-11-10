@@ -12,7 +12,7 @@ object empresa {
 	return pedidosLista.sum{pedido => pedido.precio()}
 	}
 	
-	method sucursales() = pedidos.map  { pedido => pedido.sucursal()}
+	method sucursales() = pedidos.map  { pedido => pedido.sucursal()} // TODO eliminar repetidos
 	
 	method sucursalMasFacturada() {
 		

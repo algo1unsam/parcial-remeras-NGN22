@@ -42,7 +42,7 @@ class Marca {
 
 //incluye blanco negro gris
 class Color {
-	var base = [blanco, negro, gris] 		
+	var base = [blanco, negro, gris] // TODO Esto no se usa.
 	method costo(valor) = 0
 }
 
@@ -53,11 +53,12 @@ class Especial inherits Color{
 }
 
 
-
+// TODO Aprovecharías más los conceptos de la materia si hicieras que CADA talle fuera un objeto, 
+// en lugar de esta definición que sólo es una función ('costo') con un par de datos auxiliares extraídos en constantes.
 object talle { 
 	const property costoChico = 80
-	const property costoGrande = 100
-	var tallesChicos = [32,33,34,35,36,37,38,39,40]
+	const property costoGrande = 100 // TODO Variable no usada
+	var tallesChicos = [32,33,34,35,36,37,38,39,40] // TODO Más prolijo: 32..40
 	var tallesGrandes = [41,42,43,44,45,46,47,48]
 	method costo(talle) {
 		var costo = costoChico 
@@ -72,7 +73,7 @@ object talle {
 
 
 
-
+// TODO Tenés dos implementaciones de colores (?)
 object blanco {method costo(valor) = 0}
 object negro {method costo(valor) = 0}
 object gris {method costo(valor) = 0}
